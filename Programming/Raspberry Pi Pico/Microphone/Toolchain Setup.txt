@@ -1,0 +1,142 @@
+https://www.hackster.io/sandeep-mistry/create-a-usb-microphone-with-the-raspberry-pi-pico-cc9bd5
+
+
+https://datasheets.raspberrypi.org/pico/getting-started-with-pico.pdf
+
+
+Installed Homebrew
+------------------
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+
+Run these two commands in your terminal to add Homebrew to your PATH:
+---------------------------------------------------------------------
+echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> /Users/mark/.zprofile
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
+
+Quick Pico Setup Script
+-----------------------
+brew install wget
+
+wget https://raw.githubusercontent.com/raspberrypi/pico-setup/master/pico_setup.sh
+
+chmod +x pico_setup.sh
+
+./pico_setup.sh
+
+-- This did not work. "sudo apt update" - "The operation couldn’t be completed. Unable to locate a Java Runtime. Please visit http://www.java.com for information on installing Java."
+
+
+Download the pico-sdk, pico-examples, pico-extras, and pico-playground repositories
+-----------------------------------------------------------------------------------
+git clone -b master https://github.com/raspberrypi/pico-sdk.git
+cd pico-sdk
+git submodule update --init
+
+git clone -b master https://github.com/raspberrypi/pico-examples.git
+cd pico-examples
+git submodule update --init
+
+git clone -b master https://github.com/raspberrypi/pico-extras.git
+cd pico-extras
+git submodule update --init
+
+git clone -b master https://github.com/raspberrypi/pico-playground.git
+cd pico-playground
+git submodule update --init
+
+Define PICO_SDK_PATH, PICO_EXAMPLES_PATH, PICO_EXTRAS_PATH, and PICO_PLAYGROUND_PATH in your ~/.bashrc
+------------------------------------------------------------------------------------------------------
+echo "export PICO_SDK_PATH=/Users/mark/pico/pico-sdk" >> ~/.bashrc
+
+echo "export PICO_EXAMPLES_PATH=/Users/mark/pico/pico-examples" >> ~/.bashrc
+
+echo "export PICO_EXTRAS_PATH=/Users/mark/pico/pico-extras" >> ~/.bashrc
+
+echo "export PICO_PLAYGROUND_PATH=/Users/mark/pico/pico-playground" >> ~/.bashrc
+
+export PICO_SDK_PATH=/Users/mark/pico/pico-sdk
+
+export PICO_EXAMPLES_PATH=/Users/mark/pico/pico-examples
+
+export PICO_EXTRAS_PATH=/Users/mark/pico/pico-extras
+
+export PICO_PLAYGROUND_PATH=/Users/mark/pico/pico-playground
+
+
+Pick up new variables we just defined
+-------------------------------------
+source ~/.bashrc
+
+
+Build the blink and hello_world examples
+----------------------------------------
+cd pico-examples
+mkdir build
+cd build
+cmake ../ -DCMAKE_BUILD_TYPE=Debug
+cd blink
+make -j 4
+cd ..
+cd hello_world
+make -j 4
+
+
+Download and build picoprobe and picotool
+-----------------------------------------
+cd /Users/mark/pico
+git clone https://github.com/raspberrypi/picoprobe.git
+git clone https://github.com/raspberrypi/picotool.git
+cd picoprobe
+mkdir build
+cd build
+cmake ../
+make -j 4
+cd /Users/mark/pico/picotool
+mkdir build
+cd build
+cmake ../
+
+Error: "CMake Error at CMakeLists.txt:34 (message): picotool cannot be built because libUSB is not found"
+
+brew install libusb pkg-config
+cmake ../
+make -j 4
+
+
+Copy picotool to /usr/local/bin
+-------------------------------
+sudo cp picotool /usr/local/bin/
+
+
+<Back to the Microphone Guide>
+
+Clone the git repository
+------------------------
+git clone https://github.com/sandeepmistry/pico-microphone.git
+cd pico-microphone
+mkdir build
+cd build
+cmake .. -DPICO_BOARD=pico
+make
+
++---------+-------------------+
+| PDM Mic | Raspberry Pi Pico |
+|---------+-------------------|
+|    3V   |        3V3        |
+|---------+-------------------|
+|    GND  |        GND        |
+|---------+-------------------|
+|    SEL  |        GND        |
+|---------+-------------------|
+|    DAT  |       GPIO2       |
+|---------+-------------------|
+|    CLK  |       GPIO3       |
++---------+-------------------+
+
+1) Hold down the BOOTSEL button on the board, while plugging the board into your computer with a USB cable.
+
+2) Copy the /Users/mark/pico/pico-microphone/build/examples/usb_microphone/usb_microphone.uf2 to the RPI-RP2 boot drive.
+
+
