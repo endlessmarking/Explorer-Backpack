@@ -1,22 +1,14 @@
-What are our objectives?
+#Explorer Backpack
 
-Goal 1 	- get pin (pa2) to blink every 250ms 
-		- program an on off switch 
-Goal 2 	- get audio pin (pa1) to out put (DAC)
+##Project Overview
+	What the project does
+	Why the project is useful
 
-Goal 3 - micro phone out put to change leds
-Goal 4 - 
+##Getting Started
+	How users can get started with the project
 
+##Help
+	Where users can get help with your project
 
-I/O
-
-make 
-
-leds (addressable)
-micro phone
-speaker
-flash memory
-acceleratmeter
-humidty sensor
-light sensor
-tv remote
+##Contributors
+	Who maintains and contributes to the project
