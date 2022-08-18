@@ -1,9 +1,9 @@
 # Programming Objectives
 
 ## Goals
-1 get pin (pa2) to blink every 250ms. Add an on-off switch
-2 get audio pin (pa1) to out put (DAC)
-3 microphone out put to change LEDs
+1. get pin (pa2) to blink every 250ms. Add an on-off switch
+2. get audio pin (pa1) to out put (DAC)
+3. microphone out put to change LEDs
 
 I/O
 
