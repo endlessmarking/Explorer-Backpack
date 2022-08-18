@@ -1,0 +1,7 @@
+To Do or To Consider
+Explorer Backpack v3 Revisions
+
+1) Move 3V3 to from pin 2 (IOREF) to Pin 4 (3.3V)
+2a) Move user LED from pin A2 to D13 for greater Arduino compatibility
+2b) Move PDM microphone clock pin from D13 to D12
+3) Add pin numbers to the front of the board if there's room
