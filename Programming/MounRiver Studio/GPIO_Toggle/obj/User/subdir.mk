@@ -21,6 +21,6 @@ C_DEPS += \
 
 # Each subdirectory must supply rules for building sources it contributes
 User/%.o: ../User/%.c
-	@	@	riscv-none-embed-gcc -march=rv32imac -mabi=ilp32 -msmall-data-limit=8 -mno-save-restore -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -Wunused -Wuninitialized  -g -I"C:\Users\Mark\Documents\SRC\Debug" -I"C:\Users\Mark\Documents\SRC\Core" -I"C:\Users\Mark\Documents\MounRiver\GPIO_Toggle\User" -std=gnu99 -MMD -MP -MF"$(@:%.o=%.d)" -MT"$(@)" -c -o "$@" "$<"
+	@	@	riscv-none-embed-gcc -march=rv32imac -mabi=ilp32 -msmall-data-limit=8 -mno-save-restore -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -Wunused -Wuninitialized  -g -I"C:\Users\hulcn\OneDrive\Desktop\coding projects\girtty city\Explorer-Backpack\Programming\SRC\Debug" -I"C:\Users\hulcn\OneDrive\Desktop\coding projects\girtty city\Explorer-Backpack\Programming\SRC\Core" -I"C:\Users\hulcn\OneDrive\Desktop\coding projects\girtty city\Explorer-Backpack\Programming\MounRiver Studio\GPIO_Toggle\User" -std=gnu99 -MMD -MP -MF"$(@:%.o=%.d)" -MT"$(@)" -c -o "$@" "$<"
 	@	@
 
