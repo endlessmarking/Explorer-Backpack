@@ -1,7 +1,7 @@
 # Explorer Backpack
 
 ## Project Overview
-The Explorer Backpack attaches to the top of the WCH CH32V307V development board using the available pin headers. The backpack contains a variety of sensors that can be accessed using the boards GPIO Pins. This project is intended to help people learn about interfacing with a variety of peripherals. With a little imagination it could be used to create a variety of projects such as a decorative light, data logger, TV remote, monitoring and home automation.
+The Explorer Backpack attaches to the top of the WCH CH32V307V development board using the available pin headers. The backpack contains a variety of sensors that can be accessed using the boards GPIO pins. This project is intended to help people learn about interfacing with a variety of peripherals. With a little imagination it could be used to create a variety of projects such as a decorative light, data logger, TV remote, monitoring and home automation.
 
 ### Included Compoents
 * Accelerometer
@@ -26,8 +26,5 @@ https://github.com/openwch/ch32v307
 ###MounRiver Studio
 http://www.mounriver.com/download
 
-## Help
-The development environment for the WCH board is 
-
 ## Contributors
-Who maintains and contributes to the project.
+Contributions have been made by @endlessmarking (Mark) and @Hulcalan (Alan).
