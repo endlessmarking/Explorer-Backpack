@@ -20,7 +20,7 @@ The Explorer Backpack attaches to the top of the WCH CH32V307V development board
 * Temperature Sensor
 
 ## Getting Started
-WCH CH32V307V development board is available from LCSC (Part ID C2943980). All of the design files for the Explorer Backpack are included in this repository. Including the schematic, PCB layout, Gerber files and the Bill of Materials. Some example code is available. Perhaps at some point there will be code for all the components.
+WCH CH32V307V development board is available from LCSC (Part ID C2943980). All of the design files for the Explorer Backpack are included in this repository. Including the schematic, PCB layout, Gerber files and the bill of materials. Some example code is available. Perhaps at some point there will be code for all the components.
 
 ### Open WCH GitHub
 https://github.com/openwch/ch32v307
