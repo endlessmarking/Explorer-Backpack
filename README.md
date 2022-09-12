@@ -1,7 +1,7 @@
 # Explorer Backpack
 
 ## Project Overview
-The Explorer Backpack attaches to the top of the WCH CH32V307V development board using the available pin headers. The backpack contains a variety of sensors that can be accessed using the board's GPIO pins. This project is intended to help people learn about interfacing with a variety of peripherals. With a little imagination it could be turned into a decorative light, data logger, TV remote, or a home monitoring and automation system.
+The Explorer Backpack attaches to the top of the WCH CH32V307V development board using the available pin headers. The backpack contains a variety of sensors that can be accessed using the board's GPIO pins. This project is intended to help people learn about interfacing with a variety of peripherals. With a little imagination it could be turned into a decorative light, data logger, TV remote, or a home automation and monitoring system.
 
 ![Explorer Backpack](https://github.com/endlessmarking/Explorer-Backpack/blob/main/Photos/Explorer%20Backpack.jpg?raw=true)
 
